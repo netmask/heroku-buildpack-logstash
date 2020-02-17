@@ -19,6 +19,8 @@ fi
 
 LOGSTASH_PACKAGE=${DOWNLOAD_URL##*/}
 
+rm -rf $LOGSTASH_PACKAGE
+
 case ${LOGSTASH_PACKAGE} in
   *.tar.gz)
     LOGSTASH_DIR="$BUILD_DIR/${LOGSTASH_PACKAGE%%.tar.gz}"
@@ -32,7 +34,7 @@ esac
 
 mkdir="mkdir -p"
 download="curl -sLO"
-extract="$tar -zxvf $BUILD_DIR --wildcards -f"
+extract="$tar -C $BUILD_DIR --wildcards -f"
 verify="sha1sum --check --warn"
 
 echo "-----> Installing Logstash..."
