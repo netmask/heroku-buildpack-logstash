@@ -10,6 +10,7 @@ ENV_DIR=$3
 
 INIT_SCRIPT="$BUILD_DIR/.profile.d/logstash.sh"
 
+rm -rf $CACHE_DIR/**
 
 if [ -f "$ENV_DIR/DOWNLOAD_URL" ]; then
   DOWNLOAD_URL=$(cat $ENV_DIR/DOWNLOAD_URL)
