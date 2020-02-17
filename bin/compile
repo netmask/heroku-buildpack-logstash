@@ -21,7 +21,7 @@ fi
 if [ -f "$ENV_DIR/DOWNLOAD_URL" ]; then
   DOWNLOAD_URL=$(cat $ENV_DIR/DOWNLOAD_URL)
 else
-  DOWNLOAD_URL="https://download.elastic.co/logstash/logstash/logstash-7.6.0.tar.gz"
+  DOWNLOAD_URL="https://artifacts.elastic.co/downloads/logstash/logstash-7.6.0.tar.gz"
 fi
 
 LOGSTASH_PACKAGE=${DOWNLOAD_URL##*/}
